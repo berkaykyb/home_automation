@@ -1,0 +1,222 @@
+LIST P=16F877A
+    #INCLUDE <P16F877A.INC>
+    
+    ; KAZANAN AYAR (H'3F3A') - Bunu 8888 testinde doğrulamıştık
+    __CONFIG H'3F3A'
+
+    ERRORLEVEL -302
+
+; ====================================================================
+; DEĞİŞKENLER
+; ====================================================================
+    CBLOCK 0x20
+        DES_TEMP_INT    ; Hedef Sıcaklık (Sabit 25 olacak)
+        AMB_TEMP_INT    ; Ortam Sıcaklığı
+        AMB_TEMP_FRAC   ; Ondalık Kısım
+        
+        DISP_D1, DISP_D2, DISP_D3, DISP_D4 ; Ekran Haneleri
+        DIGIT_IDX       ; Tarama Sayacı
+        
+        BCD_TENS, BCD_ONES
+        TEMP_VAL, DELAY_VAR
+    ENDC
+
+    ORG 0x00
+    GOTO INIT
+
+; ====================================================================
+; AYARLAR
+; ====================================================================
+INIT
+    BANKSEL TRISA
+    MOVLW   B'00000001'     ; RA0 Giriş (Sensör)
+    MOVWF   TRISA
+    CLRF    TRISB           ; PortB Çıkış (Ekran)
+    CLRF    TRISC           ; PortC Çıkış (Segmentler)
+    MOVLW   B'11110000'     ; RD4-7 Giriş (Keypad iptal ama ayar kalsın)
+    MOVWF   TRISD
+
+    ; ADC Ayarları (Sensör için)
+    MOVLW   B'10001110'     ; AN0 Analog, Sağa Dayalı
+    MOVWF   ADCON1
+    BANKSEL ADCON0
+    MOVLW   B'10000001'     ; ADC Açık, Fosc/32
+    MOVWF   ADCON0
+
+    BANKSEL PORTA
+    CLRF    PORTB
+    CLRF    PORTC
+    CLRF    PORTD
+    CLRF    DIGIT_IDX
+    
+    ; --- HEDEFİ SABİTLİYORUZ ---
+    MOVLW   D'25'           ; HEDEF: 25 DERECE
+    MOVWF   DES_TEMP_INT
+
+; ====================================================================
+; ANA DÖNGÜ (SADECE İŞİNİ YAPAR)
+; ====================================================================
+MAIN_LOOP
+    ; 1. Sıcaklığı Oku
+    CALL    READ_ADC
+    
+    ; 2. Karar Ver (Fan mı Isıtıcı mı?)
+    CALL    HVAC_LOGIC
+    
+    ; 3. Ekranı Hazırla (Ortam sıcaklığını yaz)
+    CALL    PREPARE_SCREEN
+    
+    ; 4. Ekranı Yak (Bunu sürekli yapar)
+    CALL    SCAN_DISPLAY
+    
+    GOTO    MAIN_LOOP
+
+; ====================================================================
+; ADC OKUMA (SENSÖR)
+; ====================================================================
+READ_ADC
+    BSF     ADCON0, GO      ; Okumayı başlat
+WAIT_ADC:
+    BTFSC   ADCON0, GO      ; Bitmesini bekle
+    GOTO    WAIT_ADC
+    
+    BANKSEL ADRESL
+    MOVF    ADRESL, W
+    BANKSEL PORTA
+    MOVWF   TEMP_VAL
+    BCF     STATUS, C
+    RRF     TEMP_VAL, W     ; Değer / 2 (LM35 formülü)
+    MOVWF   AMB_TEMP_INT    ; Ortam sıcaklığını kaydet
+    
+    CLRF    AMB_TEMP_FRAC
+    BTFSC   STATUS, C
+    BSF     AMB_TEMP_FRAC, 7
+    RETURN
+
+; ====================================================================
+; MANTIK (25 Dereceye Göre)
+; ====================================================================
+HVAC_LOGIC
+    MOVF    DES_TEMP_INT, W
+    SUBWF   AMB_TEMP_INT, W 
+    
+    BTFSC   STATUS, Z       ; Eşitse (25=25) -> Hepsini Kapat
+    GOTO    ALL_OFF
+    
+    BTFSS   STATUS, C       ; C=0 ise (Ortam < 25) -> ISITICI
+    GOTO    HEATER_ON
+    GOTO    FAN_ON          ; C=1 ise (Ortam > 25) -> FAN
+
+FAN_ON
+    BCF     PORTD, 0        ; Isıtıcı Kapa
+    BSF     PORTD, 1        ; FAN AÇ
+    RETURN
+
+HEATER_ON
+    BSF     PORTD, 0        ; ISITICI AÇ
+    BCF     PORTD, 1        ; Fan Kapa
+    RETURN
+
+ALL_OFF
+    BCF     PORTD, 0
+    BCF     PORTD, 1
+    RETURN
+
+; ====================================================================
+; EKRAN TARAMA (TİTREŞİMSİZ)
+; ====================================================================
+SCAN_DISPLAY
+    ; 1. Hane
+    MOVF    DISP_D1, W
+    CALL    GET_SEG
+    MOVWF   PORTC
+    BSF     PORTB, 0
+    CALL    DELAY
+    CLRF    PORTB
+
+    ; 2. Hane (Noktalı)
+    MOVF    DISP_D2, W
+    CALL    GET_SEG
+    IORLW   B'10000000'     ; Nokta koy
+    MOVWF   PORTC
+    BSF     PORTB, 1
+    CALL    DELAY
+    CLRF    PORTB
+
+    ; 3. Hane
+    MOVF    DISP_D3, W
+    CALL    GET_SEG
+    MOVWF   PORTC
+    BSF     PORTB, 2
+    CALL    DELAY
+    CLRF    PORTB
+
+    ; 4. Hane
+    MOVF    DISP_D4, W
+    CALL    GET_SEG
+    MOVWF   PORTC
+    BSF     PORTB, 3
+    CALL    DELAY
+    CLRF    PORTB
+    RETURN
+
+DELAY
+    MOVLW   D'50'           ; Parlaklık Ayarı
+    MOVWF   DELAY_VAR
+DL: DECFSZ  DELAY_VAR, F
+    GOTO    DL
+    RETURN
+
+PREPARE_SCREEN
+    MOVF    AMB_TEMP_INT, W
+    CALL    BIN_BCD
+    MOVF    BCD_TENS, W
+    MOVWF   DISP_D1
+    MOVF    BCD_ONES, W
+    MOVWF   DISP_D2
+    MOVLW   D'0'
+    BTFSC   AMB_TEMP_FRAC, 7
+    MOVLW   D'5'
+    MOVWF   DISP_D3
+    MOVLW   D'10'           ; C harfi
+    MOVWF   DISP_D4
+    RETURN
+
+; BCD Dönüşümü (Sayılari basamaklara ayırır)
+BIN_BCD
+    MOVWF   TEMP_VAL
+    CLRF    BCD_TENS
+    CLRF    BCD_ONES
+BL: MOVLW   D'10'
+    SUBWF   TEMP_VAL, W
+    BTFSS   STATUS, C
+    GOTO    BE
+    MOVWF   TEMP_VAL
+    INCF    BCD_TENS, F
+    GOTO    BL
+BE: MOVF    TEMP_VAL, W
+    MOVWF   BCD_ONES
+    RETURN
+
+; Segment Tablosu
+GET_SEG
+    ANDLW   0x0F
+    ADDWF   PCL, F
+    RETLW   B'00111111' ; 0
+    RETLW   B'00000110' ; 1
+    RETLW   B'01011011' ; 2
+    RETLW   B'01001111' ; 3
+    RETLW   B'01100110' ; 4
+    RETLW   B'01101101' ; 5
+    RETLW   B'01111101' ; 6
+    RETLW   B'00000111' ; 7
+    RETLW   B'01111111' ; 8
+    RETLW   B'01101111' ; 9
+    RETLW   B'00111001' ; C
+    RETLW   B'01000000' ; -
+    RETLW   B'01100011' ; o
+    RETLW   B'00000000' ; Space
+    RETLW   B'01111001' ; E
+    RETLW   B'01111000' ; t
+
+    END
