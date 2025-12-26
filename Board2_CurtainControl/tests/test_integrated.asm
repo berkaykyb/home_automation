@@ -1,7 +1,6 @@
 ;=============================================================================
 ; INTEGRATED CURTAIN CONTROL SYSTEM
 ; Modules: Potentiometer + Step Motor + LCD + LDR
-; Author: Board 2 Project
 ;=============================================================================
 
     PROCESSOR   16F877A
@@ -297,28 +296,15 @@ MD_INNER:
     RETURN
 
 UPDATE_DISPLAY:
-    ; Line 1: "Cur:XXX Tgt:XXX"
+    ; Line 1: "Cur:XXX"
     MOVLW   LCD_LINE1 + 4
     CALL    LCD_CMD
     MOVF    CURRENT_POS,W
     CALL    DISPLAY_NUMBER
     
-    MOVLW   LCD_LINE1 + 12
-    CALL    LCD_CMD
-    MOVF    TARGET_POS,W
-    CALL    DISPLAY_NUMBER
-    
     ; Line 2: "LDR:XXX"
-    MOVLW   LCD_LINE2
+    MOVLW   LCD_LINE2 + 4 ; "LDR:" den sonra
     CALL    LCD_CMD
-    MOVLW   'L'
-    CALL    LCD_CHR
-    MOVLW   'D'
-    CALL    LCD_CHR
-    MOVLW   'R'
-    CALL    LCD_CHR
-    MOVLW   ':'
-    CALL    LCD_CHR
     MOVF    LDR_ADC,W
     CALL    DISPLAY_NUMBER
     
@@ -516,7 +502,7 @@ LIMIT_100:
 ; SHOW_LABELS - Display static text
 ;-----------------------------------------------------------------------------
 SHOW_LABELS:
-    ; Line 1: "Cur:000 Tgt:000"
+    ; Line 1: "Cur:000"
     MOVLW   LCD_LINE1
     CALL    LCD_CMD
     
@@ -534,24 +520,8 @@ SHOW_LABELS:
     CALL    LCD_CHR
     MOVLW   '0'
     CALL    LCD_CHR
-    MOVLW   ' '
-    CALL    LCD_CHR
-    MOVLW   'T'
-    CALL    LCD_CHR
-    MOVLW   'g'
-    CALL    LCD_CHR
-    MOVLW   't'
-    CALL    LCD_CHR
-    MOVLW   ':'
-    CALL    LCD_CHR
-    MOVLW   '0'
-    CALL    LCD_CHR
-    MOVLW   '0'
-    CALL    LCD_CHR
-    MOVLW   '0'
-    CALL    LCD_CHR
     
-    ; Line 2: "LDR:000 Norma"
+    ; Line 2: "LDR:000"
     MOVLW   LCD_LINE2
     CALL    LCD_CMD
     
@@ -569,26 +539,11 @@ SHOW_LABELS:
     CALL    LCD_CHR
     MOVLW   '0'
     CALL    LCD_CHR
-    MOVLW   ' '
-    CALL    LCD_CHR
-    MOVLW   'N'
-    CALL    LCD_CHR
-    MOVLW   'o'
-    CALL    LCD_CHR
-    MOVLW   'r'
-    CALL    LCD_CHR
-    MOVLW   'm'
-    CALL    LCD_CHR
-    MOVLW   'a'
-    CALL    LCD_CHR
     
     RETURN
 
 ;-----------------------------------------------------------------------------
 ; DISPLAY_NUMBER - Display 3-digit number
-;-----------------------------------------------------------------------------
-;-----------------------------------------------------------------------------
-; DISPLAY_NUMBER - Convert number to 3 digits and display
 ;-----------------------------------------------------------------------------
 DISPLAY_NUMBER:
     MOVWF   TEMP_VAL
@@ -702,3 +657,5 @@ DELAY_500US_LOOP:
     DECFSZ  DELAY_COUNT2,F
     GOTO    DELAY_500US_LOOP
     RETURN
+
+    END
