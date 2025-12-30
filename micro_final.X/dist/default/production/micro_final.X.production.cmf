@@ -1,0 +1,829 @@
+%CMF
+# %PSECTS Section
+# For each object file, details of its psects are enumerated here.
+# The begining of the section is indicated by %PSECTS.  The first
+# line indicates the name of the first object file, e.g.
+#    $foo.obj
+# Each line that follows describes a psect in that object file, until
+# the next object file.  The lines that describe a psect have the
+# format:
+#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta> <reloc>
+# All addresses and the length are given in unqualified hexadecimal
+# in delta units.  Any other numeric values are decimal.
+%PSECTS
+$build/default/production/_ext/1472/board2.o
+resetVec CODE 0 4FD 4FD 1 2 1
+code CODE 0 4FE 4FE 302 2 1
+config CONFIG 4 2007 2007 1 2 1
+# %UNUSED Section
+# This section enumerates the unused ranges of each CLASS. Each entry
+# is described on a single line as follows:
+#    <class name> <range> <delta>
+# Addresses given in the range are in hexadecimal and units of delta.
+%UNUSED
+RAM 20-6F 1
+RAM A0-EF 1
+RAM 110-16F 1
+RAM 190-1EF 1
+BANK0 20-6F 1
+BANK1 A0-EF 1
+BANK2 110-16F 1
+BANK3 190-1EF 1
+CONST 0-4FC 2
+CONST 800-1FFF 2
+ENTRY 0-4FC 2
+ENTRY 800-1FFF 2
+IDLOC 2000-2003 2
+CODE 0-4FC 2
+CODE 800-1FFF 2
+SFR0 0-1F 1
+SFR1 80-9F 1
+SFR2 100-10F 1
+SFR3 180-18F 1
+COMMON 70-7F 1
+EEDATA 2100-21FF 2
+STRCODE 0-4FC 2
+STRCODE 800-1FFF 2
+STRING 0-4FC 2
+STRING 800-1FFF 2
+# %LINETAB Section
+# This section enumerates the file/line to address mappings.
+# The beginning of the section is indicated by %LINETAB.
+# The first line indicates the name of the first object file, e.g.
+#   $foo.obj
+# Each line that follows describes a single mapping until the next
+# object file.  Mappings have the following format:
+#    <address> <psect name> <class name> ><line number>:<file name>
+# The address is absolute and given given in unqualified hex 
+# in delta units of the psect. All mappings within an object file
+# are in ascending order of addresses.
+# All other numeric values are in decimal.
+%LINETAB
+$build/default/production/_ext/1472/board2.o
+4FD resetVec CODE >73:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+4FE code CODE >80:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+4FF code CODE >81:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+500 code CODE >82:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+501 code CODE >85:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+502 code CODE >88:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+504 code CODE >89:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+505 code CODE >91:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+507 code CODE >92:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+508 code CODE >93:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+509 code CODE >95:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+50B code CODE >96:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+50C code CODE >97:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+50D code CODE >100:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+50F code CODE >101:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+510 code CODE >102:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+511 code CODE >105:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+513 code CODE >106:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+514 code CODE >107:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+515 code CODE >109:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+517 code CODE >110:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+518 code CODE >111:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+519 code CODE >114:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+51B code CODE >115:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+51C code CODE >116:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+51D code CODE >117:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+51E code CODE >120:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+51F code CODE >121:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+520 code CODE >122:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+521 code CODE >123:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+522 code CODE >126:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+523 code CODE >127:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+524 code CODE >130:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+525 code CODE >131:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+526 code CODE >139:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+527 code CODE >140:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+528 code CODE >142:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+529 code CODE >143:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+52A code CODE >144:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+52B code CODE >145:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+52C code CODE >150:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+52E code CODE >151:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+52F code CODE >152:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+530 code CODE >154:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+532 code CODE >155:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+533 code CODE >156:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+534 code CODE >157:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+536 code CODE >158:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+537 code CODE >159:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+538 code CODE >163:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+539 code CODE >173:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+53B code CODE >174:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+53C code CODE >175:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+53E code CODE >176:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+53F code CODE >177:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+540 code CODE >178:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+541 code CODE >182:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+543 code CODE >183:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+544 code CODE >184:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+545 code CODE >185:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+546 code CODE >188:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+547 code CODE >193:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+549 code CODE >194:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+54A code CODE >195:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+54C code CODE >196:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+54D code CODE >198:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+54F code CODE >199:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+550 code CODE >203:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+551 code CODE >206:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+553 code CODE >207:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+554 code CODE >208:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+556 code CODE >209:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+557 code CODE >215:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+559 code CODE >216:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+55A code CODE >217:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+55C code CODE >218:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+55D code CODE >220:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+55F code CODE >221:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+560 code CODE >225:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+561 code CODE >226:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+562 code CODE >227:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+563 code CODE >228:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+564 code CODE >231:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+565 code CODE >232:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+566 code CODE >234:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+568 code CODE >235:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+569 code CODE >236:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+56A code CODE >240:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+56C code CODE >241:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+56D code CODE >242:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+56E code CODE >243:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+56F code CODE >244:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+570 code CODE >246:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+571 code CODE >247:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+572 code CODE >253:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+573 code CODE >256:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+574 code CODE >258:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+575 code CODE >265:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+576 code CODE >266:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+577 code CODE >267:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+578 code CODE >268:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+579 code CODE >271:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+57A code CODE >272:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+57B code CODE >273:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+57C code CODE >274:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+57D code CODE >278:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+57E code CODE >279:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+57F code CODE >281:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+580 code CODE >285:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+582 code CODE >286:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+583 code CODE >287:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+584 code CODE >288:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+585 code CODE >292:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+586 code CODE >293:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+587 code CODE >295:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+588 code CODE >296:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+589 code CODE >300:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+58A code CODE >301:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+58B code CODE >303:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+58C code CODE >306:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+58E code CODE >307:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+58F code CODE >308:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+590 code CODE >309:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+591 code CODE >313:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+592 code CODE >314:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+593 code CODE >316:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+594 code CODE >317:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+595 code CODE >324:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+596 code CODE >325:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+597 code CODE >326:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+599 code CODE >327:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+59A code CODE >328:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+59B code CODE >329:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+59C code CODE >330:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+59D code CODE >331:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+59E code CODE >332:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+59F code CODE >336:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5A0 code CODE >337:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5A1 code CODE >338:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5A2 code CODE >339:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5A3 code CODE >340:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5A4 code CODE >341:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5A5 code CODE >342:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5A6 code CODE >345:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5A7 code CODE >346:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5A8 code CODE >347:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5AA code CODE >348:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5AB code CODE >349:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5AC code CODE >350:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5AD code CODE >351:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5AE code CODE >352:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5AF code CODE >353:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5B0 code CODE >357:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5B1 code CODE >358:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5B2 code CODE >359:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5B3 code CODE >360:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5B4 code CODE >361:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5B5 code CODE >363:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5B6 code CODE >364:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5B7 code CODE >365:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5B8 code CODE >372:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5BA code CODE >374:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5BB code CODE >375:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5BC code CODE >376:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5BD code CODE >377:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5BE code CODE >379:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5BF code CODE >380:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5C0 code CODE >381:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5C1 code CODE >382:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5C2 code CODE >384:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5C3 code CODE >385:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5C4 code CODE >386:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5C5 code CODE >387:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5C6 code CODE >389:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5C7 code CODE >390:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5C8 code CODE >391:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5C9 code CODE >392:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5CA code CODE >394:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5CB code CODE >395:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5CC code CODE >396:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5CD code CODE >397:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5CE code CODE >399:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5CF code CODE >400:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5D0 code CODE >401:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5D1 code CODE >402:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5D2 code CODE >404:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5D3 code CODE >405:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5D4 code CODE >406:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5D5 code CODE >407:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5D6 code CODE >409:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5D7 code CODE >412:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5D8 code CODE >413:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5D9 code CODE >414:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5DA code CODE >416:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5DB code CODE >417:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5DC code CODE >418:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5DD code CODE >420:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5DE code CODE >421:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5DF code CODE >422:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5E0 code CODE >424:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5E1 code CODE >425:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5E2 code CODE >426:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5E3 code CODE >428:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5E4 code CODE >429:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5E5 code CODE >430:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5E6 code CODE >432:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5E7 code CODE >433:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5E8 code CODE >434:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5E9 code CODE >436:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5EA code CODE >437:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5EB code CODE >438:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5EC code CODE >440:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5ED code CODE >441:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5EE code CODE >442:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5EF code CODE >445:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5F0 code CODE >446:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5F1 code CODE >448:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5F2 code CODE >449:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5F3 code CODE >451:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5F4 code CODE >452:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5F5 code CODE >453:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5F6 code CODE >454:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5F7 code CODE >455:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5F8 code CODE >459:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5F9 code CODE >460:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5FA code CODE >461:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5FB code CODE >462:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5FC code CODE >464:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5FD code CODE >465:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+5FE code CODE >468:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+600 code CODE >469:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+601 code CODE >470:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+603 code CODE >471:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+604 code CODE >472:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+605 code CODE >473:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+606 code CODE >476:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+608 code CODE >477:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+609 code CODE >478:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+60B code CODE >479:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+60C code CODE >480:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+60D code CODE >481:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+60E code CODE >482:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+60F code CODE >483:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+610 code CODE >484:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+611 code CODE >485:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+612 code CODE >489:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+614 code CODE >490:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+615 code CODE >491:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+616 code CODE >492:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+617 code CODE >493:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+618 code CODE >495:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+619 code CODE >496:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+61A code CODE >497:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+61B code CODE >500:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+61D code CODE >501:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+61E code CODE >502:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+61F code CODE >503:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+620 code CODE >507:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+621 code CODE >508:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+622 code CODE >510:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+624 code CODE >511:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+625 code CODE >512:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+626 code CODE >514:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+627 code CODE >515:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+628 code CODE >517:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+62A code CODE >518:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+62B code CODE >519:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+62C code CODE >520:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+62D code CODE >522:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+62E code CODE >529:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+630 code CODE >530:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+631 code CODE >531:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+632 code CODE >534:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+633 code CODE >537:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+634 code CODE >540:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+635 code CODE >541:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+636 code CODE >542:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+637 code CODE >543:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+638 code CODE >544:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+639 code CODE >545:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+63A code CODE >546:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+63B code CODE >547:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+63C code CODE >548:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+63D code CODE >549:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+63E code CODE >550:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+63F code CODE >551:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+640 code CODE >552:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+641 code CODE >553:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+642 code CODE >554:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+643 code CODE >555:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+644 code CODE >556:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+645 code CODE >557:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+646 code CODE >558:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+647 code CODE >559:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+648 code CODE >562:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+649 code CODE >563:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+64A code CODE >565:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+64C code CODE >566:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+64D code CODE >567:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+64F code CODE >568:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+650 code CODE >570:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+651 code CODE >580:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+652 code CODE >581:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+653 code CODE >584:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+655 code CODE >585:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+656 code CODE >586:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+657 code CODE >587:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+658 code CODE >589:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+659 code CODE >590:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+65A code CODE >593:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+65C code CODE >594:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+65D code CODE >595:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+65F code CODE >596:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+660 code CODE >597:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+661 code CODE >598:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+662 code CODE >601:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+664 code CODE >602:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+665 code CODE >603:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+667 code CODE >604:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+668 code CODE >605:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+669 code CODE >606:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+66A code CODE >607:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+66B code CODE >608:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+66C code CODE >609:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+66D code CODE >610:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+66E code CODE >611:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+66F code CODE >614:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+671 code CODE >615:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+672 code CODE >616:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+673 code CODE >617:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+674 code CODE >621:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+675 code CODE >622:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+676 code CODE >624:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+678 code CODE >625:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+679 code CODE >626:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+67A code CODE >628:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+67B code CODE >629:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+67C code CODE >631:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+67E code CODE >632:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+67F code CODE >633:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+680 code CODE >634:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+681 code CODE >643:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+683 code CODE >644:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+684 code CODE >645:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+685 code CODE >648:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+686 code CODE >651:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+687 code CODE >654:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+688 code CODE >655:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+689 code CODE >656:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+68A code CODE >657:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+68B code CODE >658:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+68C code CODE >659:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+68D code CODE >660:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+68E code CODE >661:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+68F code CODE >662:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+690 code CODE >663:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+691 code CODE >664:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+692 code CODE >665:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+693 code CODE >666:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+694 code CODE >667:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+695 code CODE >668:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+696 code CODE >669:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+697 code CODE >670:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+698 code CODE >671:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+699 code CODE >672:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+69A code CODE >673:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+69B code CODE >676:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+69C code CODE >677:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+69D code CODE >679:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+69F code CODE >680:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6A0 code CODE >681:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6A1 code CODE >682:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6A3 code CODE >683:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6A4 code CODE >687:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6A6 code CODE >688:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6A7 code CODE >689:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6A8 code CODE >692:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6AA code CODE >693:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6AB code CODE >694:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6AD code CODE >695:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6AE code CODE >697:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6B0 code CODE >698:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6B1 code CODE >701:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6B2 code CODE >702:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6B3 code CODE >703:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6B4 code CODE >704:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6B5 code CODE >706:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6B6 code CODE >707:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6B7 code CODE >708:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6B8 code CODE >709:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6B9 code CODE >713:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6BB code CODE >714:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6BC code CODE >715:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6BD code CODE >716:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6BE code CODE >717:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6BF code CODE >719:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6C1 code CODE >720:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6C2 code CODE >721:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6C3 code CODE >725:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6C5 code CODE >726:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6C6 code CODE >727:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6C7 code CODE >728:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6C8 code CODE >729:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6C9 code CODE >730:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6CA code CODE >731:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6CB code CODE >734:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6CC code CODE >741:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6CD code CODE >742:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6CE code CODE >745:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6CF code CODE >746:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6D0 code CODE >750:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6D1 code CODE >751:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6D2 code CODE >752:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6D3 code CODE >754:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6D4 code CODE >755:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6D5 code CODE >757:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6D6 code CODE >758:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6D7 code CODE >759:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6D8 code CODE >760:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6D9 code CODE >761:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6DA code CODE >764:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6DB code CODE >765:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6DC code CODE >766:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6DD code CODE >767:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6DE code CODE >770:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6DF code CODE >771:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6E0 code CODE >772:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6E1 code CODE >774:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6E2 code CODE >775:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6E3 code CODE >777:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6E4 code CODE >778:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6E5 code CODE >779:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6E6 code CODE >780:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6E7 code CODE >781:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6E8 code CODE >783:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6E9 code CODE >784:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6EA code CODE >785:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6EB code CODE >786:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6EC code CODE >787:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6ED code CODE >788:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6EE code CODE >791:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6EF code CODE >792:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6F0 code CODE >793:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6F1 code CODE >794:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6F2 code CODE >795:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6F3 code CODE >797:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6F4 code CODE >798:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6F5 code CODE >799:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6F6 code CODE >800:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6F7 code CODE >803:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6F8 code CODE >804:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6F9 code CODE >807:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6FA code CODE >808:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6FB code CODE >809:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6FC code CODE >810:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6FD code CODE >813:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6FE code CODE >814:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+6FF code CODE >815:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+700 code CODE >816:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+701 code CODE >817:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+702 code CODE >820:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+703 code CODE >821:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+704 code CODE >822:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+705 code CODE >825:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+706 code CODE >826:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+707 code CODE >827:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+708 code CODE >834:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+709 code CODE >835:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+70A code CODE >837:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+70B code CODE >838:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+70C code CODE >839:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+70D code CODE >840:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+70E code CODE >841:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+70F code CODE >842:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+710 code CODE >843:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+711 code CODE >844:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+712 code CODE >845:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+713 code CODE >846:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+714 code CODE >847:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+715 code CODE >848:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+716 code CODE >849:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+717 code CODE >850:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+718 code CODE >851:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+719 code CODE >852:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+71A code CODE >853:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+71B code CODE >854:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+71C code CODE >855:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+71D code CODE >856:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+71E code CODE >860:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+71F code CODE >861:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+720 code CODE >863:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+721 code CODE >864:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+722 code CODE >865:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+723 code CODE >866:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+724 code CODE >867:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+725 code CODE >868:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+726 code CODE >869:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+727 code CODE >870:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+728 code CODE >871:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+729 code CODE >872:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+72A code CODE >873:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+72B code CODE >874:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+72C code CODE >875:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+72D code CODE >876:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+72E code CODE >878:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+72F code CODE >884:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+730 code CODE >885:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+731 code CODE >886:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+732 code CODE >887:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+733 code CODE >890:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+734 code CODE >891:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+735 code CODE >892:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+736 code CODE >893:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+737 code CODE >894:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+738 code CODE >895:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+739 code CODE >896:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+73A code CODE >900:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+73B code CODE >901:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+73C code CODE >902:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+73D code CODE >903:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+73E code CODE >904:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+73F code CODE >905:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+740 code CODE >906:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+741 code CODE >909:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+742 code CODE >910:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+743 code CODE >912:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+744 code CODE >913:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+745 code CODE >914:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+746 code CODE >916:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+747 code CODE >917:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+748 code CODE >918:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+749 code CODE >920:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+74A code CODE >921:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+74B code CODE >922:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+74C code CODE >924:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+74D code CODE >930:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+74E code CODE >932:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+74F code CODE >933:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+750 code CODE >935:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+751 code CODE >936:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+752 code CODE >938:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+753 code CODE >939:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+754 code CODE >941:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+755 code CODE >942:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+756 code CODE >943:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+757 code CODE >945:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+758 code CODE >948:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+759 code CODE >949:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+75A code CODE >950:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+75B code CODE >951:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+75C code CODE >954:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+75D code CODE >955:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+75E code CODE >956:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+75F code CODE >957:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+760 code CODE >960:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+761 code CODE >961:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+762 code CODE >962:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+763 code CODE >963:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+764 code CODE >964:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+765 code CODE >973:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+767 code CODE >974:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+768 code CODE >975:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+769 code CODE >977:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+76B code CODE >978:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+76C code CODE >979:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+76D code CODE >981:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+76F code CODE >982:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+770 code CODE >983:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+771 code CODE >984:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+772 code CODE >988:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+774 code CODE >989:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+775 code CODE >990:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+776 code CODE >991:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+778 code CODE >992:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+779 code CODE >993:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+77A code CODE >997:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+77C code CODE >998:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+77D code CODE >999:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+77E code CODE >1001:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+780 code CODE >1002:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+781 code CODE >1003:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+782 code CODE >1005:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+783 code CODE >1006:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+784 code CODE >1008:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+786 code CODE >1009:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+787 code CODE >1010:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+788 code CODE >1013:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+78A code CODE >1014:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+78B code CODE >1015:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+78C code CODE >1018:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+78D code CODE >1019:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+78E code CODE >1020:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+78F code CODE >1030:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+791 code CODE >1031:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+792 code CODE >1032:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+793 code CODE >1035:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+794 code CODE >1036:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+796 code CODE >1037:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+797 code CODE >1041:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+799 code CODE >1042:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+79A code CODE >1043:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+79B code CODE >1044:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+79C code CODE >1045:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+79D code CODE >1048:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+79F code CODE >1049:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7A0 code CODE >1050:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7A1 code CODE >1051:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7A2 code CODE >1052:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7A3 code CODE >1055:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7A5 code CODE >1056:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7A6 code CODE >1057:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7A7 code CODE >1058:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7A8 code CODE >1059:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7A9 code CODE >1062:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7AB code CODE >1063:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7AC code CODE >1064:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7AD code CODE >1065:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7AE code CODE >1066:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7AF code CODE >1070:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7B1 code CODE >1071:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7B2 code CODE >1072:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7B3 code CODE >1073:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7B4 code CODE >1074:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7B5 code CODE >1075:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7B6 code CODE >1078:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7B8 code CODE >1079:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7B9 code CODE >1080:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7BA code CODE >1081:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7BB code CODE >1082:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7BC code CODE >1083:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7BD code CODE >1085:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7BE code CODE >1088:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7C0 code CODE >1089:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7C1 code CODE >1090:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7C2 code CODE >1091:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7C3 code CODE >1094:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7C5 code CODE >1095:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7C6 code CODE >1096:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7C7 code CODE >1097:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7C8 code CODE >1100:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7CA code CODE >1101:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7CB code CODE >1102:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7CC code CODE >1103:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7CD code CODE >1107:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7CF code CODE >1108:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7D0 code CODE >1109:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7D1 code CODE >1110:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7D2 code CODE >1113:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7D4 code CODE >1114:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7D5 code CODE >1115:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7D6 code CODE >1116:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7D8 code CODE >1117:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7D9 code CODE >1119:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7DA code CODE >1120:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7DC code CODE >1121:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7DD code CODE >1122:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7DE code CODE >1125:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7E0 code CODE >1126:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7E1 code CODE >1127:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7E2 code CODE >1128:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7E4 code CODE >1129:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7E5 code CODE >1132:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7E6 code CODE >1133:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7E8 code CODE >1134:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7E9 code CODE >1137:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7EA code CODE >1138:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7EC code CODE >1139:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7ED code CODE >1140:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7EE code CODE >1150:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7EF code CODE >1151:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7F0 code CODE >1153:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7F1 code CODE >1154:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7F2 code CODE >1155:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7F3 code CODE >1156:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7F4 code CODE >1159:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7F5 code CODE >1160:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7F6 code CODE >1162:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7F7 code CODE >1163:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7F8 code CODE >1164:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7F9 code CODE >1165:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7FA code CODE >1168:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7FB code CODE >1169:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7FC code CODE >1171:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7FD code CODE >1172:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7FE code CODE >1173:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+7FF code CODE >1174:C:\Users\tokas\Desktop\Yeni klasör/board2.asm
+# %SYMTAB Section
+# An enumeration of all symbols in the program.
+# The beginning of the section is indicated by %SYMTAB.
+# Each line describes a single symbol as follows:
+#    <label> <value> [-]<load-adj> <class> <space> <psect> <file-name>
+# The value and load-adj are both in unqualified hexadecimal.
+# All other numeric values are in decimal.  The load-adj is the
+# quantity one needs to add to the symbol value in order to obtain the load
+# address of the symbol.  This value may be signed. If the symbol
+# was defined in a psect then <psect> will be "-". File-name
+# is the name of the object file in which the symbol was defined.
+%SYMTAB
+__Hspace_0 800 0 ABS 0 - -
+__Hspace_1 0 0 ABS 0 - -
+__Hspace_3 0 0 ABS 0 - -
+__Hspace_4 400F 0 ABS 0 - -
+__Hudata_bank0 0 0 ABS 0 udata_bank0 -
+__Hudata_bank1 0 0 ABS 0 udata_bank1 -
+__Hudata_bank2 0 0 ABS 0 udata_bank2 -
+__Hudata_bank3 0 0 ABS 0 udata_bank3 -
+__L__absolute__ 0 0 ABS 0 __absolute__ -
+__LresetVec 0 0 ABS 0 resetVec -
+__HresetVec 0 0 ABS 0 resetVec -
+__Hedata 0 0 ABS 0 edata -
+__Hudata 0 0 ABS 0 udata -
+__Hconfig 4010 0 CONFIG 4 config -
+__Ledata 0 0 ABS 0 edata -
+__Ludata 0 0 ABS 0 udata -
+__Hcode 0 0 ABS 0 code -
+__Hdata 0 0 ABS 0 data -
+__Lcode 0 0 ABS 0 code -
+__Ldata 0 0 ABS 0 data -
+__S0 800 0 ABS 0 - -
+__S1 0 0 ABS 0 - -
+__S3 0 0 ABS 0 - -
+__Lconfig 0 0 CONFIG 4 config -
+__Lspace_0 0 0 ABS 0 - -
+__Lspace_1 0 0 ABS 0 - -
+__Lspace_3 0 0 ABS 0 - -
+__Lspace_4 0 0 ABS 0 - -
+__Ludata_bank0 0 0 ABS 0 udata_bank0 -
+__Ludata_bank1 0 0 ABS 0 udata_bank1 -
+__Ludata_bank2 0 0 ABS 0 udata_bank2 -
+__Ludata_bank3 0 0 ABS 0 udata_bank3 -
+__H__absolute__ 0 0 ABS 0 __absolute__ -
+__Hudata_shr 0 0 ABS 0 udata_shr -
+__Ludata_shr 0 0 ABS 0 udata_shr -
+# %SPLITSTAB Section
+# This section enumerates all the psect splits performed by the assembler.
+# The beginning of the section is indicated by %SPLITSTAB.
+# Each line is a record a particular split, where the parent psect is on
+# the left and the child on the right.  Note that a child psect is always
+# split form the top of the parent psect. All splits from a given parent
+# are listed in the order in which they occurred.
+%SPLITSTAB
+# %DABS Section
+# This section contains a table of all usuage of the assember
+# directive DABS in the program. Each line has the following format:
+#   <name> <space> <address> <size>
+# If the DABS was originally labelled then that shall be <name>,
+# otherwise name will be "-".  The <space> number is in decimal.
+# <address> and <size> are in byte units as unqaulified hexadecimal
+%DABS
+# %SEGMENTS Section
+# This sections enumerates the segments of the program.  Each segment
+# is described on a single line as follows:
+#    <name> <space> <link address> <file address> <size> <delta>
+# Addresses and size are in unqualified hexadecimal.  The link address
+# and size are in units of delta. The file address is in units of bytes.
+# All other numeric quantities are in decimal.
+%SEGMENTS
+resetVec 0 4FD 9FA 1 2
+code 0 4FE 9FC 302 2
+# %NOTES Section
+# This section contains data of all the note-psects.  The beginning of the section
+# is indicated by %NOTES. The first line indicates the name and decimal
+# byte-length of the first note-psect, e.g.
+#   $codecov_info_hdr 16
+# Each line that follows contains the byte-data of the psect in hexadecimal as a
+# space-separated list. These lines are limited to 16 bytes of data.
+%NOTES
