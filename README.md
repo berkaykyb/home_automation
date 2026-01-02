@@ -119,16 +119,6 @@ All transmitted and received values were verified against on-screen displays, co
 
 ---
 
-## Future Improvements
-- Wireless communication (ESP32 / Bluetooth / Wi-Fi)
-- Advanced control algorithms (PID)
-- Data logging and historical analysis
-- Automatic sensor calibration
-- Modern GUI (PyQt / Web-based)
-- Mobile and IoT integration
-
----
-
 ## Technologies Used
 - PIC16F877A
 - Assembly Language
