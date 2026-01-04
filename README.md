@@ -131,11 +131,6 @@ All transmitted and received values were verified against on-screen displays, co
 
 ---
 
-## Repository
-🔗 https://github.com/berkaykyb/home_automation
-
----
-
 ## Authors
 - **Berkay Kayabaşı** – Computer Engineering  
 - Samet Toka – Computer Engineering  
